@@ -1,10 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type user struct {
-	name  string
 	email string
+	name string
 }
 
 func (u user) notify() {
