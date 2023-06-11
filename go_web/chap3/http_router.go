@@ -8,7 +8,8 @@ import (
 
 //⾼效的轻量级第三⽅多路复⽤器——HttpRouter。
 
-//第三个参数Params 包含了具名参数，具名参数的值可以在处理器内 部通过ByName ⽅法获取
+//第三个参数Params 包含了具名参数，具名参数的值可以在处理器内部通过ByName⽅法获取
+//地址为 http://127.0.0.1:8080/hello/foo，则展示hello, foo!
 func hello3(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 	fmt.Fprintf(w, "hello, %s!\n", p.ByName("name"))
 }
