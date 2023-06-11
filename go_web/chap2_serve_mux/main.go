@@ -1,7 +1,7 @@
 package main
 
 import (
-	_"html/template"
+	_ "html/template"
 	"net/http"
 )
 

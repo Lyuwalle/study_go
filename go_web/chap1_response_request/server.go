@@ -1,4 +1,5 @@
 package main
+
 /*
 这是一个go web应用程序
 启动方式：命令行cd到这个程序所在的目录，运行go run server.go
