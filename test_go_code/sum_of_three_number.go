@@ -1,6 +1,10 @@
-package test_go_code
+package main
 
-import "sort"
+import (
+	"fmt"
+	"sort"
+	"strconv"
+)
 
 //给定数组，计算三数之和等于零的所有数组
 func threeSum(nums []int) [][]int {
@@ -35,4 +39,10 @@ func threeSum(nums []int) [][]int {
 		}
 	}
 	return ans
+}
+
+func main() {
+	//将int类型的参数转成10进制
+	i1 := strconv.FormatInt(1689238826565, 10)
+	fmt.Println(i1)
 }
