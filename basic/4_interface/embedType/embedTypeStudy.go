@@ -15,6 +15,7 @@ type User struct {
 }
 
 // notify implements a method that can be called via a value of type User.
+// *User类型就是notifier接口的实现类型
 func (u *User) notify() {
 	fmt.Printf("Sending User email to %s<%s>\n",
 		u.name,
@@ -23,7 +24,7 @@ func (u *User) notify() {
 
 // admin represents an admin User with privileges.
 type admin struct {
-	User  // Embedded Type
+	User  // Embedded Type 嵌入类型
 	level string
 }
 
@@ -41,7 +42,7 @@ func main() {
 	// We can access the inner type's method directly.
 	ad.User.notify()
 
-	// The inner type's method is promoted.
+	// The inner type's method is promoted. 调用嵌入类型的方法
 	ad.notify()
 
 	sendNotification(&ad)
