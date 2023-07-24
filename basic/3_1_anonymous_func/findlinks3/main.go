@@ -1,5 +1,7 @@
 package main
 
+//广度优先算法抓取链接
+
 import (
 	"fmt"
 	"log"
@@ -12,7 +14,8 @@ import (
 // f is called at most once for each item. f是一个函数类型参数，参数为string 返回值为[]string
 func breadthFirst(f func(item string) []string, worklist []string) {
 	seen := make(map[string]bool)
-	//这里的循环条件相当于while(true)，从一个url链接中拿到所有链接之后，在从这些链接中一个一个取子链接，直至所有的链接网全部被访问
+	//这里的循环条件:worklist的长度大于0，每个循环开始之前会把worklist置为nil
+	//从一个url链接中拿到所有链接之后，在从这些链接中一个一个取子链接，直至所有的链接网全部被访问 程序运行结束
 	for len(worklist) > 0 {
 		items := worklist
 		worklist = nil
