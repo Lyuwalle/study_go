@@ -37,7 +37,8 @@ func topo_sort(prereqs map[string][]string) []string {
 		keys = append(keys, item)
 	}
 	sort.Strings(keys)
-
+	//用深度优先搜索了整张图，获得了符合要求的课程序列
+	//当匿名函数需要被递归调用时，我们必须首先声明一个变量visitAll
 	var visitAll func(items []string)
 	visitAll = func(items []string) {
 		for _, item := range items {
