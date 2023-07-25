@@ -1,6 +1,6 @@
 module study_go
 
-go 1.17
+go 1.20
 
 require (
 	github.com/buaazp/fasthttprouter v0.1.1

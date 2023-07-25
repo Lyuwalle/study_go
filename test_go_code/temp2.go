@@ -1,16 +1,23 @@
 package main
 
-import (
-	"fmt"
-	"os"
-)
+import "fmt"
+
+type ByteCounter int
+
+//*ByteCounter满足io.Writer的约定，我们可以把它传入Fprintf函数中；Fprintf函数执行字符串格式化的过程不会去关注ByteCounter正确的累加结果的长度。
+func (c *ByteCounter) Write(p []byte) (int, error) {
+	*c += ByteCounter(len(p)) // convert int to ByteCounter
+	return len(p), nil
+}
+
 
 func main() {
-	var s,sep string
-	//os.Args表示命令行参数 如go run temp2.go arg1 arg2 arg3
-	for i := 1; i < len(os.Args); i++{
-		s += sep + os.Args[i]
-		sep = ""
-	}
-	fmt.Println(s)
+	var c ByteCounter
+	c.Write([]byte("hello"))
+	fmt.Println(c) // "5", = len("hello")
+	c = 0          // reset the counter
+	var name = "Dolly"
+	fmt.Fprintf(&c, "hello, %s", name)
+	fmt.Println(c) // "12", = len("hello, Dolly")
+
 }
