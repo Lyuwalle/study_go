@@ -15,7 +15,7 @@ type Dog struct {
 	name string // 名字。
 }
 
-//Dog类型本身的方法集合中只包含了 2 个方法，也就是所有的值方法。而它的指针类型*Dog方法集合却包含了 3 个方法（是Dog类型的方法就是*Dog类型的方法），
+//SetName Dog类型本身的方法集合中只包含了 2 个方法，也就是所有的值方法。而它的指针类型*Dog方法集合却包含了 3 个方法（是Dog类型的方法就是*Dog类型的方法），
 //所以*Dog类型就成为了Pet接口的实现类型。
 func (dog *Dog) SetName(name string) {
 	dog.name = name

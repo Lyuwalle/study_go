@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+//定义接口与实现接口的简单示例
+
 type Phone interface {
 	call()
 }
